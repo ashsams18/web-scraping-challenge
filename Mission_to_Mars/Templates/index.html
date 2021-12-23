@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+    <h2>Latest Mars News:</h2>
+    <h4>{{listings.news_title}}</h4>
+    <p>{{listings.news_article}}</p>
+  </div>
+
+  <div class="container-fluid">
+  <h2>Featured Mars Image:</h2>
+  <div class="col-md-9">
+  <img src={{listings.featured_image}}>
+  </div>
+  <div class="col-md-3">
+  <h3>Mars Facts:</h3>
+  <table>{{listings.html_table|safe}}</table>
+  </div>
+  </div>
+
+
+  <div class="container-fluid">
+  <div class="col text-center">
+  <h2>Mars Hemispheres</h2>
+  </div>
+  <div class="col-md-3">
+  <h4>{{listings.image_urls[0]["title"]}}</h4>
+  <img width = "70%" src={{listings.image_urls[0]["img_url"]}}>
+  </div>
+  <div class="col-md-3">
+  <h4>{{listings.image_urls[1]["title"]}}</h4>
+  <img width = "70%" src={{listings.image_urls[1]["img_url"]}}>
+  </div>
+  <div class="col-md-3">
+  <h4>{{listings.image_urls[2]["title"]}}</h4>
+  <img width = "70%" src={{listings.image_urls[2]["img_url"]}}>
+  </div>
+  <div class="col-md-3">
+  <h4>{{listings.image_urls[3]["title"]}}</h4>
+  <img width = "70%" src={{listings.image_urls[3]["img_url"]}}>
+  </div>
+
+  </div>
+</body>
+
+</html>
